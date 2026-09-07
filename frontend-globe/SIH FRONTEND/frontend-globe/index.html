@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThermoWatch — AI Thermal Intelligence Platform</title>
+  
+  <!-- Leaflet CSS & JS for robust interactive map/globe rendering -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: #0b0f19;
+      color: #f3f4f6;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+    }
+
+    /* Globe / Map Container */
+    #globeContainer {
+      flex: 1;
+      height: 100vh;
+      background: #060913;
+      position: relative;
+    }
+
+    .leaflet-container {
+      background: #060913 !important;
+    }
+
+    /* Sidebar Layout */
+    #sidebar {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 360px;
+      height: 100vh;
+      background: rgba(15, 23, 42, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-left: 1px solid rgba(255, 255, 255, 0.08);
+      color: white;
+      padding: 20px;
+      overflow-y: auto;
+      z-index: 1000;
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Custom Scrollbar */
+    #sidebar::-webkit-scrollbar {
+      width: 6px;
+    }
+    #sidebar::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+    }
+    #sidebar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 3px;
+    }
+    #sidebar::-webkit-scrollbar-thumb:hover {
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    /* Header Section */
+    .brand-header {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding-bottom: 15px;
+    }
+
+    .brand-header h2 {
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #ff4d4d, #f97316);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.5px;
+    }
+
+    .brand-header p {
+      color: #94a3b8;
+      font-size: 0.825rem;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Section Headers */
+    .section-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: #cbd5e1;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Stat Grid */
+    .stat-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .stat-box {
+      flex: 1 1 45%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 12px;
+      padding: 14px 10px;
+      text-align: center;
+      transition: all 0.2s ease;
+    }
+
+    .stat-box:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .stat-box h3 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      line-height: 1.2;
+    }
+
+    .stat-box small {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin-top: 4px;
+    }
+
+    /* Priority Alerts Container */
+    #alerts-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .alert-card {
+      padding: 12px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: rgba(255, 255, 255, 0.03);
+      position: relative;
+    }
+
+    .alert-card:hover {
+      transform: translateX(-4px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .alert-red {
+      background: rgba(239, 68, 68, 0.12);
+      border-left: 4px solid #ef4444;
+      border-top: 1px solid rgba(239, 68, 68, 0.2);
+      border-right: 1px solid rgba(239, 68, 68, 0.2);
+      border-bottom: 1px solid rgba(239, 68, 68, 0.2);
+    }
+    .alert-red:hover {
+      background: rgba(239, 68, 68, 0.22);
+    }
+
+    .alert-amber {
+      background: rgba(245, 158, 11, 0.12);
+      border-left: 4px solid #f59e0b;
+      border-top: 1px solid rgba(245, 158, 11, 0.2);
+      border-right: 1px solid rgba(245, 158, 11, 0.2);
+      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    }
+    .alert-amber:hover {
+      background: rgba(245, 158, 11, 0.22);
+    }
+
+    .alert-green {
+      background: rgba(34, 197, 94, 0.12);
+      border-left: 4px solid #22c55e;
+      border-top: 1px solid rgba(34, 197, 94, 0.2);
+      border-right: 1px solid rgba(34, 197, 94, 0.2);
+      border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+    }
+    .alert-green:hover {
+      background: rgba(34, 197, 94, 0.22);
+    }
+
+    .alert-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+
+    .alert-card-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .alert-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .badge-red { background: #ef4444; color: white; }
+    .badge-amber { background: #f59e0b; color: black; }
+    .badge-green { background: #22c55e; color: black; }
+
+    .alert-card-details {
+      font-size: 0.78rem;
+      color: #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .click-hint {
+      font-size: 0.68rem;
+      color: #64748b;
+      margin-top: 6px;
+      text-align: right;
+      font-style: italic;
+    }
+
+    /* CCTV Verification Panel */
+    .cctv-panel {
+      background: #000;
+      border: 2px solid #00ff66;
+      border-radius: 8px;
+      text-align: center;
+      padding: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 102, 0.15);
+      transition: all 0.3s ease;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .cctv-panel video {
+      border-radius: 4px;
+      margin-bottom: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      max-height: 180px;
+      object-fit: cover;
+    }
+
+    .confirmed-badge {
+      background: #00cc44;
+      color: #000;
+      padding: 6px 14px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.3px;
+      animation: pulse 1.5s infinite;
+      box-shadow: 0 0 12px rgba(0, 204, 68, 0.6);
+      display: inline-block;
+      margin-top: 4px;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(0.98); }
+    }
+
+    /* Quick Test Control Box */
+    .dev-controls {
+      margin-top: 10px;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      font-size: 0.75rem;
+    }
+
+    .dev-controls button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.72rem;
+      margin-top: 5px;
+      margin-right: 5px;
+      font-weight: 600;
+    }
+    .dev-controls button:hover {
+      background: #2563eb;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Globe / Map Container -->
+  <div id="globeContainer"></div>
+
+  <!-- Sidebar Panel -->
+  <div id="sidebar">
+    <!-- Header -->
+    <div class="brand-header">
+      <h2>🔥 ThermoWatch</h2>
+      <p>AI Thermal Intelligence Platform</p>
+    </div>
+
+    <!-- Task 1: Live Stat Boxes -->
+    <div>
+      <div class="section-title">📊 Live Detection Stats</div>
+      <div class="stat-grid">
+        <div class="stat-box">
+          <h3 id="total-count">--</h3>
+          <small>Total</small>
+        </div>
+        <div class="stat-box">
+          <h3 id="wildfire-count" style="color: #ef4444;">--</h3>
+          <small>Wildfires</small>
+        </div>
+        <div class="stat-box">
+          <h3 id="industrial-count" style="color: #a855f7;">--</h3>
+          <small>Industrial</small>
+        </div>
+        <div class="stat-box">
+          <h3 id="crop-count" style="color: #eab308;">--</h3>
+          <small>Crop Burns</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task 2: Priority Alerts -->
+    <div>
+      <div class="section-title">🚨 Priority Alerts</div>
+      <div id="alerts-container">
+        <p style="color: #64748b; font-size: 0.8rem;">Loading priority thermal anomalies...</p>
+      </div>
+    </div>
+
+    <!-- Task 3: CCTV Verification Panel Shell -->
+    <div>
+      <div class="section-title">📹 CCTV Verification</div>
+      <div class="cctv-panel" id="cctv-panel">
+        <p style="color: #666; font-size: 0.85rem; font-weight: 500;">Awaiting satellite trigger...</p>
+      </div>
+
+      <!-- Developer Test Harness for Verification -->
+      <div class="dev-controls">
+        <div style="color: #94a3b8; font-weight: 600; margin-bottom: 4px;">⚡ Integration Test Harness:</div>
+        <button onclick="showCctvQuerying()">Test Querying</button>
+        <button onclick="showCctvConfirmed('https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4', 'CAM-802')">Test Confirmed</button>
+        <button onclick="resetCctvPanel()">Reset</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Initialize Leaflet Map / Globe Simulation
+    let map = L.map('globeContainer', {
+      center: [20.0, 0.0],
+      zoom: 3,
+      zoomControl: false
+    });
+
+    // Add Dark Matter Tile Layer for sleek tactical display
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    L.control.zoom({ position: 'bottomleft' }).addTo(map);
+
+    // Mock GeoJSON Dataset representing realistic thermal anomalies globally
+    const mockFireData = {
+      "type": "FeatureCollection",
+      "features": [
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-121.5, 39.7] }, "properties": { "id": "FIRE-001", "classification": "wildfire", "frp": 340.5, "location": "Northern California" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-62.2, -8.5] }, "properties": { "id": "FIRE-002", "classification": "wildfire", "frp": 210.2, "location": "Amazon Basin, Brazil" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [149.1, -35.3] }, "properties": { "id": "FIRE-003", "classification": "wildfire", "frp": 155.8, "location": "New South Wales, AU" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [77.2, 30.1] }, "properties": { "id": "FIRE-004", "classification": "crop_burning", "frp": 45.0, "location": "Punjab, India" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [80.5, 16.5] }, "properties": { "id": "FIRE-005", "classification": "industrial", "frp": 88.4, "location": "Vizag Refinery, India" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [55.3, 25.2] }, "properties": { "id": "FIRE-006", "classification": "industrial", "frp": 120.0, "location": "Jebel Ali Industrial Zone" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-118.2, 34.0] }, "properties": { "id": "FIRE-007", "classification": "false_positive", "frp": 12.0, "location": "Solar Farm, CA" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [24.5, -25.7] }, "properties": { "id": "FIRE-008", "classification": "wildfire", "frp": 78.3, "location": "Limpopo, South Africa" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [100.5, 13.7] }, "properties": { "id": "FIRE-009", "classification": "crop_burning", "frp": 28.5, "location": "Central Thailand" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [-58.3, -34.6] }, "properties": { "id": "FIRE-010", "classification": "wildfire", "frp": 112.4, "location": "Delta del Paraná, AR" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [12.4, 41.9] }, "properties": { "id": "FIRE-011", "classification": "wildfire", "frp": 85.0, "location": "Lazio, Italy" } },
+        { "type": "Feature", "geometry": { "type": "Point", "coordinates": [106.8, -6.2] }, "properties": { "id": "FIRE-012", "classification": "crop_burning", "frp": 52.1, "location": "West Java, Indonesia" } }
+      ]
+    };
+
+    let mapMarkers = [];
+
+    // Main loader function
+    function loadFireData(data) {
+      // ----------------------------------------------------
+      // TASK 1: Count classifications and update DOM stats
+      // ----------------------------------------------------
+      let counts = { wildfire: 0, crop_burning: 0, industrial: 0, false_positive: 0 };
+      data.features.forEach(f => {
+        if (counts.hasOwnProperty(f.properties.classification)) {
+          counts[f.properties.classification]++;
+        }
+      });
+
+      document.getElementById('total-count').textContent = Object.values(counts).reduce((a, b) => a + b, 0);
+      document.getElementById('wildfire-count').textContent = counts.wildfire;
+      document.getElementById('industrial-count').textContent = counts.industrial;
+      document.getElementById('crop-count').textContent = counts.crop_burning;
+
+      // ----------------------------------------------------
+      // TASK 2: Render Priority Alert Cards (Red/Amber/Green)
+      // ----------------------------------------------------
+      renderAlerts(data.features);
+
+      // Plot points on Map / Globe
+      plotMarkersOnMap(data.features);
+    }
+
+    // Task 2: Priority Alerts Renderer
+    function renderAlerts(features) {
+      const container = document.getElementById('alerts-container');
+      
+      // Filter out false positives, sort by FRP descending, take top 10
+      const sorted = features
+        .filter(f => f.properties.classification !== 'false_positive')
+        .sort((a, b) => b.properties.frp - a.properties.frp)
+        .slice(0, 10);
+
+      container.innerHTML = sorted.map(f => {
+        // Priority Rules:
+        // Red: classification == 'wildfire' AND frp > 100
+        // Amber: classification == 'wildfire' AND frp <= 100 OR classification == 'industrial'
+        // Green: everything else
+        let level = 'green';
+        let badgeClass = 'badge-green';
+
+        if (f.properties.classification === 'wildfire' && f.properties.frp > 100) {
+          level = 'red';
+          badgeClass = 'badge-red';
+        } else if ((f.properties.classification === 'wildfire' && f.properties.frp <= 100) || f.properties.classification === 'industrial') {
+          level = 'amber';
+          badgeClass = 'badge-amber';
+        }
+
+        const coords = f.geometry.coordinates; // [lng, lat]
+
+        return `
+          <div class="alert-card alert-${level}" onclick="flyToAnomaly(${coords[1]}, ${coords[0]})">
+            <div class="alert-card-header">
+              <span class="alert-card-title">${f.properties.classification.toUpperCase()}</span>
+              <span class="alert-badge ${badgeClass}">${level.toUpperCase()}</span>
+            </div>
+            <div class="alert-card-details">
+              <span>📍 ${f.properties.location || 'Unknown'}</span>
+              <span>FRP: ${f.properties.frp} MW</span>
+            </div>
+            <div class="click-hint">Click to fly camera on globe 🎯</div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Globe Fly-To Interaction for Task 2
+    function flyToAnomaly(lat, lng) {
+      map.flyTo([lat, lng], 8, {
+        animate: true,
+        duration: 1.5
+      });
+    }
+
+    // Render Globe / Map Markers
+    function plotMarkersOnMap(features) {
+      // Clear existing markers
+      mapMarkers.forEach(m => map.removeLayer(m));
+      mapMarkers = [];
+
+      features.forEach(f => {
+        const [lng, lat] = f.geometry.coordinates;
+        let color = '#22c55e'; // green fallback
+        if (f.properties.classification === 'wildfire') color = '#ef4444';
+        else if (f.properties.classification === 'industrial') color = '#a855f7';
+        else if (f.properties.classification === 'crop_burning') color = '#eab308';
+        else if (f.properties.classification === 'false_positive') color = '#64748b';
+
+        const marker = L.circleMarker([lat, lng], {
+          radius: Math.min(Math.max(f.properties.frp / 25, 6), 14),
+          fillColor: color,
+          color: '#ffffff',
+          weight: 1.5,
+          opacity: 0.9,
+          fillOpacity: 0.75
+        }).addTo(map);
+
+        marker.bindPopup(`
+          <div style="color: #000; font-family: sans-serif;">
+            <b style="color: ${color}; text-transform: uppercase;">${f.properties.classification}</b><br>
+            <b>Location:</b> ${f.properties.location || 'N/A'}<br>
+            <b>FRP:</b> ${f.properties.frp} MW<br>
+            <b>Coords:</b> ${lat.toFixed(2)}, ${lng.toFixed(2)}
+          </div>
+        `);
+
+        mapMarkers.push(marker);
+      });
+    }
+
+    // ----------------------------------------------------
+    // TASK 3: CCTV Confirmation Panel UI Shell & Global Triggers
+    // ----------------------------------------------------
+    function showCctvQuerying() {
+      const panel = document.getElementById('cctv-panel');
+      panel.style.borderColor = '#f59e0b';
+      panel.style.boxShadow = '0 0 15px rgba(245, 158, 11, 0.25)';
+      panel.innerHTML = '<p style="color: #f59e0b; font-size: 0.9rem; font-weight: 600;">🔍 Querying nearest CCTV camera...</p>';
+    }
+
+    function showCctvConfirmed(videoUrl, cameraId) {
+      const panel = document.getElementById('cctv-panel');
+      panel.style.borderColor = '#00ff66';
+      panel.style.boxShadow = '0 0 20px rgba(0, 255, 102, 0.4)';
+      panel.innerHTML = `
+        <video src="${videoUrl}" autoplay loop muted width="100%"></video>
+        <p class="confirmed-badge">✅ VISUALLY CONFIRMED — Camera ${cameraId}</p>
+      `;
+    }
+
+    function resetCctvPanel() {
+      const panel = document.getElementById('cctv-panel');
+      panel.style.borderColor = '#00ff66';
+      panel.style.boxShadow = '0 0 15px rgba(0, 255, 102, 0.15)';
+      panel.innerHTML = '<p style="color: #666; font-size: 0.85rem; font-weight: 500;">Awaiting satellite trigger...</p>';
+    }
+
+    // Make functions explicitly accessible on global window object for Person 6
+    window.showCctvQuerying = showCctvQuerying;
+    window.showCctvConfirmed = showCctvConfirmed;
+    window.resetCctvPanel = resetCctvPanel;
+    window.loadFireData = loadFireData;
+
+    // Execute initial load on page load
+    document.addEventListener('DOMContentLoaded', () => {
+      loadFireData(mockFireData);
+    });
+  </script>
+</body>
+</html>
