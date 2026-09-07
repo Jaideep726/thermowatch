@@ -186,31 +186,25 @@
       border-right: 1px solid rgba(239, 68, 68, 0.2);
       border-bottom: 1px solid rgba(239, 68, 68, 0.2);
     }
-    .alert-red:hover {
-      background: rgba(239, 68, 68, 0.22);
-    }
+    .alert-red:hover { background: rgba(239, 68, 68, 0.22); }
 
-    .alert-amber {
-      background: rgba(245, 158, 11, 0.12);
-      border-left: 4px solid #f59e0b;
-      border-top: 1px solid rgba(245, 158, 11, 0.2);
-      border-right: 1px solid rgba(245, 158, 11, 0.2);
-      border-bottom: 1px solid rgba(245, 158, 11, 0.2);
+    .alert-purple {
+      background: rgba(168, 85, 247, 0.12);
+      border-left: 4px solid #a855f7;
+      border-top: 1px solid rgba(168, 85, 247, 0.2);
+      border-right: 1px solid rgba(168, 85, 247, 0.2);
+      border-bottom: 1px solid rgba(168, 85, 247, 0.2);
     }
-    .alert-amber:hover {
-      background: rgba(245, 158, 11, 0.22);
-    }
+    .alert-purple:hover { background: rgba(168, 85, 247, 0.22); }
 
-    .alert-green {
-      background: rgba(34, 197, 94, 0.12);
-      border-left: 4px solid #22c55e;
-      border-top: 1px solid rgba(34, 197, 94, 0.2);
-      border-right: 1px solid rgba(34, 197, 94, 0.2);
-      border-bottom: 1px solid rgba(34, 197, 94, 0.2);
+    .alert-yellow {
+      background: rgba(234, 179, 8, 0.12);
+      border-left: 4px solid #eab308;
+      border-top: 1px solid rgba(234, 179, 8, 0.2);
+      border-right: 1px solid rgba(234, 179, 8, 0.2);
+      border-bottom: 1px solid rgba(234, 179, 8, 0.2);
     }
-    .alert-green:hover {
-      background: rgba(34, 197, 94, 0.22);
-    }
+    .alert-yellow:hover { background: rgba(234, 179, 8, 0.22); }
 
     .alert-card-header {
       display: flex;
@@ -234,8 +228,8 @@
     }
 
     .badge-red { background: #ef4444; color: white; }
-    .badge-amber { background: #f59e0b; color: black; }
-    .badge-green { background: #22c55e; color: black; }
+    .badge-purple { background: #a855f7; color: white; }
+    .badge-yellow { background: #eab308; color: black; }
 
     .alert-card-details {
       font-size: 0.78rem;
@@ -393,11 +387,10 @@
       zoomControl: false
     });
 
-    // Add Dark Matter Tile Layer for sleek tactical display
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://carto.com/">CARTO</a>',
-      subdomains: 'abcd',
-      maxZoom: 19
+    // Add Esri Dark Gray Base Tile Layer for sleek tactical display (Free, No API Key needed)
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Esri, DeLorme, NAVTEQ',
+      maxZoom: 16
     }).addTo(map);
 
     L.control.zoom({ position: 'bottomleft' }).addTo(map);
@@ -447,9 +440,6 @@
 
       // Plot points on Map / Globe
       plotMarkersOnMap(data.features);
-
-      // Integration (Person 6): Auto-trigger CCTV panel if high-confidence wildfire detected
-      checkForCctvTrigger(data.features);
     }
 
     // Task 2: Priority Alerts Renderer
@@ -463,19 +453,15 @@
         .slice(0, 10);
 
       container.innerHTML = sorted.map(f => {
-        // Priority Rules:
-        // Red: classification == 'wildfire' AND frp > 100
-        // Amber: classification == 'wildfire' AND frp <= 100 OR classification == 'industrial'
-        // Green: everything else
-        let level = 'green';
-        let badgeClass = 'badge-green';
+        let level = 'yellow';
+        let badgeClass = 'badge-yellow';
 
-        if (f.properties.classification === 'wildfire' && f.properties.frp > 100) {
+        if (f.properties.classification === 'wildfire') {
           level = 'red';
           badgeClass = 'badge-red';
-        } else if ((f.properties.classification === 'wildfire' && f.properties.frp <= 100) || f.properties.classification === 'industrial') {
-          level = 'amber';
-          badgeClass = 'badge-amber';
+        } else if (f.properties.classification === 'industrial') {
+          level = 'purple';
+          badgeClass = 'badge-purple';
         }
 
         const coords = f.geometry.coordinates; // [lng, lat]
@@ -484,7 +470,7 @@
           <div class="alert-card alert-${level}" onclick="flyToAnomaly(${coords[1]}, ${coords[0]})">
             <div class="alert-card-header">
               <span class="alert-card-title">${f.properties.classification.toUpperCase()}</span>
-              <span class="alert-badge ${badgeClass}">${level.toUpperCase()}</span>
+              <span class="alert-badge ${badgeClass}">PRIORITY</span>
             </div>
             <div class="alert-card-details">
               <span>📍 ${f.properties.location || 'Unknown'}</span>
@@ -536,6 +522,12 @@
           </div>
         `);
 
+        marker.on('click', () => {
+          if (typeof checkForCctvTrigger === 'function') {
+            checkForCctvTrigger(f);
+          }
+        });
+
         mapMarkers.push(marker);
       });
     }
@@ -574,8 +566,17 @@
     window.loadFireData = loadFireData;
 
     // Execute initial load on page load
-    document.addEventListener('DOMContentLoaded', () => {
-      loadFireData(mockFireData);
+    document.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const res = await fetch('http://localhost:8000/api/fires.geojson');
+        if (!res.ok) throw new Error('Backend returned ' + res.status);
+        const liveData = await res.json();
+        console.log('[ThermoWatch] Live backend data loaded.');
+        loadFireData(liveData);
+      } catch (e) {
+        console.warn('[ThermoWatch] Backend unreachable, falling back to mock data.', e);
+        loadFireData(mockFireData);
+      }
     });
   </script>
 </body>
