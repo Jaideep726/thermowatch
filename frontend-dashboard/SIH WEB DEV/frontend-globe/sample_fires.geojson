@@ -1,0 +1,51 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [70.05, 22.45]
+      },
+      "properties": {
+        "classification": "wildfire",
+        "frp": 85,
+        "windSpeed": 20,
+        "windDir": 45
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [75.60, 30.55]
+      },
+      "properties": {
+        "classification": "crop_burning",
+        "frp": 40
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [79.05, 30.35]
+      },
+      "properties": {
+        "classification": "industrial",
+        "frp": 120
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [76.10, 30.10]
+      },
+      "properties": {
+        "classification": "false_positive",
+        "frp": 20
+      }
+    }
+  ]
+}
