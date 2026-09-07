@@ -31,3 +31,12 @@ Thumbs.db
 
 # Cesium Ion token (don't commit secrets)
 # Put your token in a .env file or paste directly during local dev
+
+# Project Documents
+01_Data_Engineer_and_Repo_Owner.md
+02_ML_Engineer.md
+03_Backend_Engineer.md
+04_Frontend_Engineer_Globe.md
+05_Frontend_Engineer_Dashboard.md
+06_Integration_and_Pitch_Lead.md
+ThermoWatch_PRD.md

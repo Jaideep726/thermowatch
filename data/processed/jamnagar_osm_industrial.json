@@ -1,0 +1,1792 @@
+[
+  {
+    "lat": 22.3222865,
+    "lon": 69.8812197,
+    "type": "node",
+    "osm_id": 5542340593,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3192673,
+    "lon": 69.883812,
+    "type": "node",
+    "osm_id": 5542341044,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3297771,
+    "lon": 69.8749043,
+    "type": "node",
+    "osm_id": 5542343988,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3422341,
+    "lon": 69.8653369,
+    "type": "node",
+    "osm_id": 5542344034,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3423387,
+    "lon": 69.8695436,
+    "type": "node",
+    "osm_id": 5542344037,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3281942,
+    "lon": 69.8433602,
+    "type": "node",
+    "osm_id": 6239548903,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3216538,
+    "lon": 69.8878097,
+    "type": "node",
+    "osm_id": 6239549042,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3164928,
+    "lon": 69.8616528,
+    "type": "node",
+    "osm_id": 6239549084,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3436853,
+    "lon": 69.8917446,
+    "type": "node",
+    "osm_id": 6239549200,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3305512,
+    "lon": 69.7377348,
+    "type": "node",
+    "osm_id": 6457475196,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.332933,
+    "lon": 69.7347575,
+    "type": "node",
+    "osm_id": 6457475197,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3482574,
+    "lon": 69.7521597,
+    "type": "node",
+    "osm_id": 6457475225,
+    "name": "",
+    "landuse": "",
+    "man_made": "flare",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4117257,
+    "lon": 70.0574431,
+    "type": "node",
+    "osm_id": 7195092934,
+    "name": "Raj Brass Industry",
+    "landuse": "",
+    "man_made": "works",
+    "industrial": ""
+  },
+  {
+    "lat": 22.9708321,
+    "lon": 69.7240694,
+    "type": "node",
+    "osm_id": 7234792872,
+    "name": "MBM Godham",
+    "landuse": "",
+    "man_made": "works",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3244991,
+    "lon": 69.7354255,
+    "type": "node",
+    "osm_id": 12102019343,
+    "name": "Essar Power Limited",
+    "landuse": "",
+    "man_made": "works",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3552984,
+    "lon": 69.8457621,
+    "type": "node",
+    "osm_id": 12102034391,
+    "name": "Reliance industries",
+    "landuse": "",
+    "man_made": "works",
+    "industrial": ""
+  },
+  {
+    "lat": 22.408036,
+    "lon": 69.0115032,
+    "type": "way",
+    "osm_id": 91576656,
+    "name": "TATA Chemicals",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "chemical"
+  },
+  {
+    "lat": 22.4002472,
+    "lon": 69.0192397,
+    "type": "way",
+    "osm_id": 91576658,
+    "name": "TATA Chemicals",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3367861,
+    "lon": 69.8665828,
+    "type": "way",
+    "osm_id": 91585872,
+    "name": "Reliance Refinery",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "refinery"
+  },
+  {
+    "lat": 22.4724457,
+    "lon": 69.0813046,
+    "type": "way",
+    "osm_id": 128715258,
+    "name": "Okha Port",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4696808,
+    "lon": 69.0735094,
+    "type": "way",
+    "osm_id": 128715459,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4759327,
+    "lon": 69.0693886,
+    "type": "way",
+    "osm_id": 128715460,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8291294,
+    "lon": 69.354301,
+    "type": "way",
+    "osm_id": 139441710,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4279163,
+    "lon": 69.8595694,
+    "type": "way",
+    "osm_id": 139787908,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3899992,
+    "lon": 69.8578366,
+    "type": "way",
+    "osm_id": 139793158,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 23.0015093,
+    "lon": 70.2182157,
+    "type": "way",
+    "osm_id": 141131394,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "port"
+  },
+  {
+    "lat": 22.9981698,
+    "lon": 70.2096609,
+    "type": "way",
+    "osm_id": 141133540,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8173404,
+    "lon": 69.5531807,
+    "type": "way",
+    "osm_id": 160685914,
+    "name": "Mundra Thermal Powerplant",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.819854,
+    "lon": 69.5188392,
+    "type": "way",
+    "osm_id": 160685919,
+    "name": "Coastal Gujarat Power Ltd",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3822124,
+    "lon": 69.7189431,
+    "type": "way",
+    "osm_id": 197338461,
+    "name": "Essar Refinery",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "refinery"
+  },
+  {
+    "lat": 22.3297269,
+    "lon": 69.744362,
+    "type": "way",
+    "osm_id": 197338462,
+    "name": "Vadinar Refinery",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "oil"
+  },
+  {
+    "lat": 22.441339,
+    "lon": 69.6762947,
+    "type": "way",
+    "osm_id": 197338465,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4139523,
+    "lon": 69.727606,
+    "type": "way",
+    "osm_id": 197338467,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3080056,
+    "lon": 69.7120467,
+    "type": "way",
+    "osm_id": 223725824,
+    "name": "Essar Power",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.9567,
+    "lon": 70.4521311,
+    "type": "way",
+    "osm_id": 261252509,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "port"
+  },
+  {
+    "lat": 22.430029,
+    "lon": 69.8353546,
+    "type": "way",
+    "osm_id": 321060506,
+    "name": "SHREE DIGVIJAY CEMENT",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3422483,
+    "lon": 69.8603135,
+    "type": "way",
+    "osm_id": 322037750,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4632578,
+    "lon": 69.8351311,
+    "type": "way",
+    "osm_id": 340400914,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.9191876,
+    "lon": 70.1042631,
+    "type": "way",
+    "osm_id": 361301736,
+    "name": "Tuna-Tekra Container Terminal",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "port"
+  },
+  {
+    "lat": 22.8929928,
+    "lon": 69.8961685,
+    "type": "way",
+    "osm_id": 391690052,
+    "name": "OPG Power",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.413718,
+    "lon": 70.0564002,
+    "type": "way",
+    "osm_id": 427382216,
+    "name": "GIDC Phase 2",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4153171,
+    "lon": 70.0467143,
+    "type": "way",
+    "osm_id": 427385354,
+    "name": "GIDC Phase 3",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4730998,
+    "lon": 70.0322672,
+    "type": "way",
+    "osm_id": 427766479,
+    "name": "Digjam Textiles LTD",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.5176322,
+    "lon": 70.0300247,
+    "type": "way",
+    "osm_id": 429943658,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.5481146,
+    "lon": 70.0319572,
+    "type": "way",
+    "osm_id": 429943659,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.5678079,
+    "lon": 70.0423785,
+    "type": "way",
+    "osm_id": 429943660,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.5192853,
+    "lon": 70.0268359,
+    "type": "way",
+    "osm_id": 429943661,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.51439,
+    "lon": 70.0286886,
+    "type": "way",
+    "osm_id": 429943662,
+    "name": "Jamnagar Port",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4066035,
+    "lon": 69.7371071,
+    "type": "way",
+    "osm_id": 481421407,
+    "name": "BORD's crude oil terminal",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.892939,
+    "lon": 69.6641618,
+    "type": "way",
+    "osm_id": 588785144,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3183828,
+    "lon": 69.6005772,
+    "type": "way",
+    "osm_id": 591617516,
+    "name": "Port",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8122117,
+    "lon": 69.7058554,
+    "type": "way",
+    "osm_id": 625110314,
+    "name": "Oriental Carbon and Chemicals Limited",
+    "landuse": "industrial",
+    "man_made": "works",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8106454,
+    "lon": 69.7039309,
+    "type": "way",
+    "osm_id": 625110318,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8087491,
+    "lon": 69.7049408,
+    "type": "way",
+    "osm_id": 653514892,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8090521,
+    "lon": 69.6960707,
+    "type": "way",
+    "osm_id": 653514893,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8010656,
+    "lon": 69.6815801,
+    "type": "way",
+    "osm_id": 653514894,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.7822205,
+    "lon": 69.6769613,
+    "type": "way",
+    "osm_id": 653514905,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.7814106,
+    "lon": 69.6788013,
+    "type": "way",
+    "osm_id": 653514906,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.7877047,
+    "lon": 69.6537494,
+    "type": "way",
+    "osm_id": 661657425,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3870889,
+    "lon": 69.8110658,
+    "type": "way",
+    "osm_id": 684109100,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3667824,
+    "lon": 69.8791408,
+    "type": "way",
+    "osm_id": 693344720,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3465412,
+    "lon": 69.9003274,
+    "type": "way",
+    "osm_id": 693344721,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3317196,
+    "lon": 69.8997671,
+    "type": "way",
+    "osm_id": 693344722,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.9853998,
+    "lon": 70.223486,
+    "type": "way",
+    "osm_id": 770728728,
+    "name": "Kandla International Container Terminal",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "port"
+  },
+  {
+    "lat": 22.9277353,
+    "lon": 69.8231363,
+    "type": "way",
+    "osm_id": 839105241,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.9073587,
+    "lon": 69.8739266,
+    "type": "way",
+    "osm_id": 839105244,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.936707,
+    "lon": 69.7915828,
+    "type": "way",
+    "osm_id": 839105245,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0221541,
+    "lon": 69.2643573,
+    "type": "way",
+    "osm_id": 894995750,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0222482,
+    "lon": 69.183172,
+    "type": "way",
+    "osm_id": 894997838,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3251255,
+    "lon": 69.7369145,
+    "type": "way",
+    "osm_id": 971811809,
+    "name": "Vadinar Power Plant",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2433227,
+    "lon": 70.3639634,
+    "type": "way",
+    "osm_id": 984259047,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2442977,
+    "lon": 70.3622585,
+    "type": "way",
+    "osm_id": 984259048,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4230553,
+    "lon": 70.0478218,
+    "type": "way",
+    "osm_id": 984259053,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4230655,
+    "lon": 70.0453324,
+    "type": "way",
+    "osm_id": 984259054,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4249381,
+    "lon": 70.0354123,
+    "type": "way",
+    "osm_id": 984259055,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4317341,
+    "lon": 70.038426,
+    "type": "way",
+    "osm_id": 984259056,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4336706,
+    "lon": 70.032087,
+    "type": "way",
+    "osm_id": 984259057,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4351378,
+    "lon": 70.0313867,
+    "type": "way",
+    "osm_id": 984259058,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.430553,
+    "lon": 69.9996629,
+    "type": "way",
+    "osm_id": 984259059,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4298272,
+    "lon": 70.0069157,
+    "type": "way",
+    "osm_id": 984259060,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4326537,
+    "lon": 69.9471504,
+    "type": "way",
+    "osm_id": 984259062,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3426404,
+    "lon": 69.8168785,
+    "type": "way",
+    "osm_id": 984259071,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3975806,
+    "lon": 70.0486227,
+    "type": "way",
+    "osm_id": 984366233,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.039113,
+    "lon": 70.4128923,
+    "type": "way",
+    "osm_id": 984376932,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0392224,
+    "lon": 70.4075012,
+    "type": "way",
+    "osm_id": 984376933,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0357828,
+    "lon": 70.4010122,
+    "type": "way",
+    "osm_id": 984376934,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8484574,
+    "lon": 69.3716361,
+    "type": "way",
+    "osm_id": 989882273,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4228361,
+    "lon": 69.8433548,
+    "type": "way",
+    "osm_id": 1002375029,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.9313765,
+    "lon": 69.7025362,
+    "type": "way",
+    "osm_id": 1002375165,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8228219,
+    "lon": 69.3500518,
+    "type": "way",
+    "osm_id": 1009305140,
+    "name": "Port Area",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3190808,
+    "lon": 69.6877231,
+    "type": "way",
+    "osm_id": 1009322654,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2095794,
+    "lon": 69.5707852,
+    "type": "way",
+    "osm_id": 1081692053,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0423371,
+    "lon": 70.405977,
+    "type": "way",
+    "osm_id": 1152354469,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0120072,
+    "lon": 69.8614266,
+    "type": "way",
+    "osm_id": 1152358297,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0103239,
+    "lon": 70.0369268,
+    "type": "way",
+    "osm_id": 1152381713,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0078168,
+    "lon": 70.0357443,
+    "type": "way",
+    "osm_id": 1152381714,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3581888,
+    "lon": 70.2370609,
+    "type": "way",
+    "osm_id": 1154859946,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3272948,
+    "lon": 70.2889656,
+    "type": "way",
+    "osm_id": 1154859947,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1519539,
+    "lon": 70.2934157,
+    "type": "way",
+    "osm_id": 1154859951,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3346076,
+    "lon": 69.9232068,
+    "type": "way",
+    "osm_id": 1159186265,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3184554,
+    "lon": 69.9191823,
+    "type": "way",
+    "osm_id": 1159186269,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.7364009,
+    "lon": 69.7141069,
+    "type": "way",
+    "osm_id": 1167546138,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "container_terminal",
+    "industrial": ""
+  },
+  {
+    "lat": 22.101522,
+    "lon": 69.4140458,
+    "type": "way",
+    "osm_id": 1230885335,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1176727,
+    "lon": 69.3522822,
+    "type": "way",
+    "osm_id": 1230896320,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1062365,
+    "lon": 69.3406088,
+    "type": "way",
+    "osm_id": 1231651507,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1435864,
+    "lon": 69.3144478,
+    "type": "way",
+    "osm_id": 1244647266,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "scrap_yard"
+  },
+  {
+    "lat": 22.1095851,
+    "lon": 69.2710739,
+    "type": "way",
+    "osm_id": 1247371531,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1052326,
+    "lon": 69.2712781,
+    "type": "way",
+    "osm_id": 1247371591,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.101648,
+    "lon": 69.2658699,
+    "type": "way",
+    "osm_id": 1251324197,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0976751,
+    "lon": 69.2662125,
+    "type": "way",
+    "osm_id": 1251324198,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0882868,
+    "lon": 69.2807701,
+    "type": "way",
+    "osm_id": 1251826273,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2626232,
+    "lon": 70.2597799,
+    "type": "way",
+    "osm_id": 1260605156,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.906069,
+    "lon": 70.3843108,
+    "type": "way",
+    "osm_id": 1263049523,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2763234,
+    "lon": 69.9957327,
+    "type": "way",
+    "osm_id": 1263638688,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1865316,
+    "lon": 70.2460674,
+    "type": "way",
+    "osm_id": 1263644839,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8165755,
+    "lon": 69.6966755,
+    "type": "way",
+    "osm_id": 1263682825,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8237795,
+    "lon": 69.6997643,
+    "type": "way",
+    "osm_id": 1263682826,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8199251,
+    "lon": 69.6968614,
+    "type": "way",
+    "osm_id": 1263682827,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8289898,
+    "lon": 69.6932703,
+    "type": "way",
+    "osm_id": 1263682828,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8498687,
+    "lon": 69.6990037,
+    "type": "way",
+    "osm_id": 1263682829,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8203827,
+    "lon": 69.7053024,
+    "type": "way",
+    "osm_id": 1263682830,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8181626,
+    "lon": 69.7000817,
+    "type": "way",
+    "osm_id": 1263682831,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8049351,
+    "lon": 69.687497,
+    "type": "way",
+    "osm_id": 1263682832,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8065077,
+    "lon": 69.6577405,
+    "type": "way",
+    "osm_id": 1263682836,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8479296,
+    "lon": 69.7736784,
+    "type": "way",
+    "osm_id": 1263682842,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.8441667,
+    "lon": 69.7682274,
+    "type": "way",
+    "osm_id": 1263682843,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.7647888,
+    "lon": 69.7047806,
+    "type": "way",
+    "osm_id": 1263682858,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "port"
+  },
+  {
+    "lat": 22.7246876,
+    "lon": 70.2788061,
+    "type": "way",
+    "osm_id": 1263687519,
+    "name": "Jodiya Harbour",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "port"
+  },
+  {
+    "lat": 22.7058889,
+    "lon": 70.4585194,
+    "type": "way",
+    "osm_id": 1263687523,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2541581,
+    "lon": 70.2034928,
+    "type": "way",
+    "osm_id": 1266822493,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0251279,
+    "lon": 70.1104592,
+    "type": "way",
+    "osm_id": 1266824049,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0297181,
+    "lon": 70.1160973,
+    "type": "way",
+    "osm_id": 1266824052,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.5790944,
+    "lon": 70.2333096,
+    "type": "way",
+    "osm_id": 1273183385,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4160111,
+    "lon": 69.0388991,
+    "type": "way",
+    "osm_id": 1311235459,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.4561615,
+    "lon": 69.0707807,
+    "type": "way",
+    "osm_id": 1311532031,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.0680208,
+    "lon": 69.2688428,
+    "type": "way",
+    "osm_id": 1313829218,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.034702,
+    "lon": 69.1885791,
+    "type": "way",
+    "osm_id": 1319296236,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1065361,
+    "lon": 69.2477842,
+    "type": "way",
+    "osm_id": 1323196671,
+    "name": "Krishan Dairy - Devbhumi Dwarka Milk Union",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1079006,
+    "lon": 69.2644425,
+    "type": "way",
+    "osm_id": 1323196718,
+    "name": "JALARAM AGENCY",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1091872,
+    "lon": 69.2679515,
+    "type": "way",
+    "osm_id": 1323196725,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3289612,
+    "lon": 69.8569452,
+    "type": "way",
+    "osm_id": 1333561675,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1704508,
+    "lon": 69.2878532,
+    "type": "way",
+    "osm_id": 1333790332,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3798157,
+    "lon": 69.8784725,
+    "type": "way",
+    "osm_id": 1340347613,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3755023,
+    "lon": 69.8758261,
+    "type": "way",
+    "osm_id": 1340347614,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.375592,
+    "lon": 69.8802045,
+    "type": "way",
+    "osm_id": 1340347615,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3707318,
+    "lon": 69.8797611,
+    "type": "way",
+    "osm_id": 1340347616,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3741485,
+    "lon": 69.8875525,
+    "type": "way",
+    "osm_id": 1340347617,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3753012,
+    "lon": 69.8936351,
+    "type": "way",
+    "osm_id": 1340347620,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3694635,
+    "lon": 69.8879682,
+    "type": "way",
+    "osm_id": 1340347621,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3671314,
+    "lon": 69.8939769,
+    "type": "way",
+    "osm_id": 1340347622,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3658294,
+    "lon": 69.8834528,
+    "type": "way",
+    "osm_id": 1340347635,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.364598,
+    "lon": 69.8861577,
+    "type": "way",
+    "osm_id": 1340347647,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3681238,
+    "lon": 69.8739254,
+    "type": "way",
+    "osm_id": 1340347652,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3723532,
+    "lon": 69.8701636,
+    "type": "way",
+    "osm_id": 1340347655,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3835819,
+    "lon": 69.8635473,
+    "type": "way",
+    "osm_id": 1340347657,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3805855,
+    "lon": 69.8635092,
+    "type": "way",
+    "osm_id": 1340347658,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.3669749,
+    "lon": 69.8599535,
+    "type": "way",
+    "osm_id": 1340347659,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "oil"
+  },
+  {
+    "lat": 22.2184819,
+    "lon": 69.2062112,
+    "type": "way",
+    "osm_id": 1340835204,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2197569,
+    "lon": 69.2054319,
+    "type": "way",
+    "osm_id": 1340835218,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2155216,
+    "lon": 69.2079948,
+    "type": "way",
+    "osm_id": 1340835237,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2080127,
+    "lon": 69.225229,
+    "type": "way",
+    "osm_id": 1341347027,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2071474,
+    "lon": 69.2250426,
+    "type": "way",
+    "osm_id": 1341347028,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2074622,
+    "lon": 69.2226807,
+    "type": "way",
+    "osm_id": 1341347043,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1626274,
+    "lon": 69.0475982,
+    "type": "way",
+    "osm_id": 1343498424,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1548528,
+    "lon": 69.0727837,
+    "type": "way",
+    "osm_id": 1367662510,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2261705,
+    "lon": 69.6628905,
+    "type": "way",
+    "osm_id": 1426186481,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2188872,
+    "lon": 69.1096378,
+    "type": "way",
+    "osm_id": 1537401566,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.2892948,
+    "lon": 69.0377951,
+    "type": "way",
+    "osm_id": 1544594989,
+    "name": "Bricks",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "brickyard"
+  },
+  {
+    "lat": 22.7521953,
+    "lon": 69.6913125,
+    "type": "relation",
+    "osm_id": 9087557,
+    "name": "Mundra Port",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "port"
+  },
+  {
+    "lat": 22.7433034,
+    "lon": 69.709459,
+    "type": "relation",
+    "osm_id": 15791329,
+    "name": "Mundra International Container Terminal",
+    "landuse": "industrial",
+    "man_made": "container_terminal",
+    "industrial": "port"
+  },
+  {
+    "lat": 22.7892096,
+    "lon": 69.6871644,
+    "type": "relation",
+    "osm_id": 15791330,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "container_terminal",
+    "industrial": ""
+  },
+  {
+    "lat": 22.7980418,
+    "lon": 69.6984758,
+    "type": "relation",
+    "osm_id": 15791331,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.7406025,
+    "lon": 69.6990201,
+    "type": "relation",
+    "osm_id": 15791332,
+    "name": "Container Terminal 3",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": "port"
+  },
+  {
+    "lat": 22.7406224,
+    "lon": 69.6886171,
+    "type": "relation",
+    "osm_id": 15791333,
+    "name": "Container Terminal 4",
+    "landuse": "industrial",
+    "man_made": "container_terminal",
+    "industrial": "port"
+  },
+  {
+    "lat": 22.786892,
+    "lon": 69.7071483,
+    "type": "relation",
+    "osm_id": 15791766,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.7613581,
+    "lon": 69.5614168,
+    "type": "relation",
+    "osm_id": 15793672,
+    "name": "West Port",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.1383359,
+    "lon": 70.2389268,
+    "type": "relation",
+    "osm_id": 17357933,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.7819731,
+    "lon": 70.5005816,
+    "type": "relation",
+    "osm_id": 17357971,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  },
+  {
+    "lat": 22.6121847,
+    "lon": 70.4664197,
+    "type": "relation",
+    "osm_id": 17452232,
+    "name": "",
+    "landuse": "industrial",
+    "man_made": "",
+    "industrial": ""
+  }
+]
