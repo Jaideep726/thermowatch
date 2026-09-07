@@ -14,6 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 
+  <!-- Integration: CCTV mock trigger logic (Person 6) -->
+  <script src="../../../integration/trigger.js"></script>
+
   <style>
     * {
       box-sizing: border-box;
@@ -444,6 +447,9 @@
 
       // Plot points on Map / Globe
       plotMarkersOnMap(data.features);
+
+      // Integration (Person 6): Auto-trigger CCTV panel if high-confidence wildfire detected
+      checkForCctvTrigger(data.features);
     }
 
     // Task 2: Priority Alerts Renderer
