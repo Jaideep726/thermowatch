@@ -1,5 +1,6 @@
 ﻿from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
 from io import StringIO
 import pandas as pd
 import json
@@ -47,6 +48,26 @@ app.add_middleware(
 LATEST_GEOJSON_PATH = "backend/latest_fires.geojson"
 
 
+class IncidentInput(BaseModel):
+    """One FIRMS-like detection for the interactive demo."""
+    id: str | None = None
+    latitude: float
+    longitude: float
+    location: str | None = None
+    bright_ti4: float = 0
+    bright_ti5: float = 0
+    bright_diff: float = 0
+    frp: float = 0
+    confidence_num: float = 0
+    daynight_num: int = 0
+    hour_of_day: int = 0
+    temporal_persistence: float = 0
+    site_temp_std: float = 0
+    detections_per_month: float = 0
+    thermal_excess: float = 0
+    frp_brightness_ratio: float = 0
+
+
 # ── Helpers ──────────────────────────────────────────────────────────────────
 def _df_to_geojson(df: pd.DataFrame) -> dict:
     """Convert a classified DataFrame into a GeoJSON FeatureCollection."""
@@ -60,7 +81,9 @@ def _df_to_geojson(df: pd.DataFrame) -> dict:
                                 float(row.get("latitude", 0))]
             },
             "properties": {
+                "id":             row.get("id", ""),
                 "classification": row.get("classification", "unknown"),
+                "location":       row.get("location", "Unknown"),
                 "frp":            float(row.get("frp", 0)),
                 "bright_ti4":     float(row.get("bright_ti4", 0)),
                 "bright_ti5":     float(row.get("bright_ti5", 0)),
@@ -99,6 +122,19 @@ def _stub_classify(df: pd.DataFrame) -> pd.Series:
     return df.apply(rule, axis=1)
 
 
+def _classify_dataframe(df: pd.DataFrame) -> pd.DataFrame:
+    """Apply the trained model, or the explicit demo fallback if unavailable."""
+    if model_loaded:
+        for feature in MODEL_FEATURES:
+            if feature not in df.columns:
+                df[feature] = 0
+        predictions = model.predict(df[MODEL_FEATURES])
+        df["classification"] = [LABEL_MAP[int(prediction)] for prediction in predictions]
+    else:
+        df["classification"] = _stub_classify(df)
+    return df
+
+
 # ── Endpoints ────────────────────────────────────────────────────────────────
 @app.get("/")
 def health():
@@ -116,17 +152,7 @@ async def classify(file: UploadFile = File(...)):
         df = pd.read_csv(StringIO(content.decode()))
 
         # ── Run model or stub ────────────────────────────────────────────────
-        if model_loaded:
-            # Ensure all 12 features exist; fill missing with 0
-            for feat in MODEL_FEATURES:
-                if feat not in df.columns:
-                    df[feat] = 0
-            X = df[MODEL_FEATURES]
-            preds = model.predict(X)
-            df["classification"] = [LABEL_MAP[int(p)] for p in preds]
-        else:
-            # STUB: heuristic until real model arrives
-            df["classification"] = _stub_classify(df)
+        df = _classify_dataframe(df)
 
         geojson = _df_to_geojson(df)
 
@@ -138,6 +164,17 @@ async def classify(file: UploadFile = File(...)):
 
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Classification failed: {str(e)}")
+
+
+@app.post("/classify/incident")
+def classify_incident(incident: IncidentInput):
+    """Classify one FIRMS-like detection for the interactive demo."""
+    try:
+        df = pd.DataFrame([incident.model_dump()])
+        df = _classify_dataframe(df)
+        return _df_to_geojson(df)["features"][0]
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=f"Incident classification failed: {str(e)}")
 
 
 @app.get("/api/fires.geojson")

@@ -32,7 +32,7 @@ thermowatch/
 │   └── models/           # Trained XGBoost model, charts
 ├── backend/              # FastAPI backend (classify, serve GeoJSON)
 ├── frontend-globe/       # CesiumJS 3D globe visualization
-├── frontend-dashboard/   # Dashboard sidebar, alerts, CCTV panel
+├── frontend-dashboard-deprecated/ # Preserved older dashboard copy (not for demo)
 ├── integration/          # CCTV mock trigger logic, glue scripts
 ├── docs/                 # Team core.md files, pitch deck, checklists
 └── README.md
@@ -67,7 +67,7 @@ source venv/bin/activate   # Windows: venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn main:app --reload
 
-# Frontend — open frontend-globe/index.html in a browser
+# Demo frontend — see docs/DEMO_START.md
 ```
 
 ---
