@@ -440,6 +440,12 @@
 
       // Plot points on Map / Globe
       plotMarkersOnMap(data.features);
+
+      // TASK 3: Integration — Auto-trigger CCTV for high-confidence wildfires
+      // (Person 6: Integration Lead)
+      if (typeof checkForCctvTrigger === 'function') {
+        checkForCctvTrigger(data.features);
+      }
     }
 
     // Task 2: Priority Alerts Renderer
@@ -447,8 +453,9 @@
       const container = document.getElementById('alerts-container');
       
       // Filter out false positives, sort by FRP descending, take top 10
+      // Also filter out malformed features (missing geometry or coordinates)
       const sorted = features
-        .filter(f => f.properties.classification !== 'false_positive')
+        .filter(f => f.properties && f.geometry && f.geometry.coordinates && f.properties.classification !== 'false_positive')
         .sort((a, b) => b.properties.frp - a.properties.frp)
         .slice(0, 10);
 
@@ -497,6 +504,8 @@
       mapMarkers = [];
 
       features.forEach(f => {
+        // Skip malformed features (null geometry or missing coordinates)
+        if (!f.geometry || !f.geometry.coordinates) return;
         const [lng, lat] = f.geometry.coordinates;
         let color = '#22c55e'; // green fallback
         if (f.properties.classification === 'wildfire') color = '#ef4444';
