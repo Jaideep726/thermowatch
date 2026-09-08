@@ -1,6 +1,6 @@
 # ML Engineer Core Documentation — ThermoWatch
 
-**Person 2: ML Engineer**  
+**Person 2: ML Engineer**
 **Last Updated:** 2026-09-07
 
 ---
@@ -37,7 +37,7 @@ Turn labeled FIRMS data into a multi-class classifier that distinguishes wildfir
 ```python
 MODEL_FEATURES = [
     'bright_ti4',              # Band I4 brightness temp (K)
-    'bright_ti5',              # Band I5 brightness temp (K)  
+    'bright_ti5',              # Band I5 brightness temp (K)
     'bright_diff',             # Ti4 - Ti5 (spectral signature)
     'frp',                     # Fire Radiative Power (MW)
     'confidence_num',          # Confidence level (1-3 numeric)
@@ -180,7 +180,7 @@ The model heavily relies on spectral signature (bright_diff) and temporal stabil
 ### Problem 5: Limited Training Data & Class Imbalance
 **Issue:** NRT FIRMS data (last 5 days) only captured 128 labeled samples with severe class imbalance (115 industrial, 13 wildfire, 0 crop_burning, 0 false_positive).
 
-**Solution:** 
+**Solution:**
 - Model still trained successfully with binary classification (industrial vs. wildfire)
 - For production: need FIRMS archive data (2000-present) to get balanced multi-class dataset
 - Current model serves as proof-of-concept; architecture scales to 4-class once more data is added
@@ -199,16 +199,16 @@ The model heavily relies on spectral signature (bright_diff) and temporal stabil
 
 ## Key Learnings
 
-1. **XGBoost over Neural Nets for Tabular Data**  
+1. **XGBoost over Neural Nets for Tabular Data**
    With only 12 input features, gradient-boosted trees train faster (minutes vs. hours) and achieve better accuracy on structured data. No need for deep learning complexity.
 
-2. **Spatial Cross-Validation is Non-Negotiable**  
+2. **Spatial Cross-Validation is Non-Negotiable**
    Random train/test split would give 95%+ accuracy because the model memorizes coordinates. Spatial CV forces it to generalize to unseen locations.
 
-3. **Two Metrics Tell the Full Story**  
+3. **Two Metrics Tell the Full Story**
    Pipeline F1 (high) shows the system is internally consistent. Ground-truth accuracy (lower) shows real-world performance. Reporting both = intellectual honesty.
 
-4. **Feature Engineering > Model Complexity**  
+4. **Feature Engineering > Model Complexity**
    The 12 features encode domain knowledge (thermal signatures, temporal patterns). A simple XGBoost model on good features beats a complex model on raw data.
 
 ---

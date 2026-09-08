@@ -7,7 +7,7 @@
 - **Data files produced**: `data/raw/*_NRT_5days.csv` (12 files) - NRT satellite readings.
 
 ## TASK 2 - OSM Industrial Sites
-- **Tech stack used & why**: Overpass API with `requests.post`. Extended the tags beyond the baseline spec to include `industrial=refinery`, `industrial=factory`, and `man_made=petroleum_well` to ensure Jamnagar's massive refinery complex was fully captured. 
+- **Tech stack used & why**: Overpass API with `requests.post`. Extended the tags beyond the baseline spec to include `industrial=refinery`, `industrial=factory`, and `man_made=petroleum_well` to ensure Jamnagar's massive refinery complex was fully captured.
 - **Important findings**: The Overpass API rate-limited us with HTTP 429 and 406 errors when fetching all 4 regions concurrently. Also discovered Overpass strictly requires an `Accept: */*` and a descriptive `User-Agent` header for POST requests to avoid 406 Not Acceptable errors.
 - **Problems encountered & how solved**: Uttarakhand and Angul timed out or were blocked due to rate limits. I wrote a fallback script `fetch_missing.py` to target just those two missing regions with an increased timeout, which completed successfully.
 - **Data files produced**: `data/processed/*_osm_industrial.json` (4 files) - lists of `{lat, lon}` for every known industrial point in our demo regions.

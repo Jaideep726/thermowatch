@@ -73,9 +73,18 @@ uvicorn backend.main:app --reload
 - The CSV is gitignored (`*.csv`) — share sample files via Drive link, not git.
 
 ### Problems encountered
-- PowerShell aliases `curl` → `Invoke-WebRequest`, which doesn't support `-F` multipart. Use `C:\Windows\System32\curl.exe` explicitly for testing.
+- PowerShell aliases `curl` to `Invoke-WebRequest`, which does not support `-F` multipart. Use a real curl installation or Postman for multipart testing.
 
 ---
+
+## Interactive Demo — `/classify/incident` ✅
+
+The demo sends one FIRMS-like incident at a time to `POST /classify/incident`.
+The endpoint uses the same XGBoost model path as `/classify` and returns one
+GeoJSON Feature. If the model is unavailable, it uses the explicit stub fallback.
+
+The frontend displays `Source: backend model` or `Source: prepared demo fallback`
+so the presenter can tell which path was used.
 
 ## TASK 3 — `/api/fires.geojson` endpoint ✅
 
